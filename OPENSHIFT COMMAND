@@ -1,0 +1,125 @@
+Display documentation for pods
+$ oc explain pods
+
+LOGIN
+$ oc login
+
+Log in specifying a user name
+$ oc login -u user1
+
+Create a new application from a local Git repository
+$ oc new-app .
+
+Create a new application from a remote Git repository
+$ oc new-app https://github.com/sclorg/cakephp-ex
+
+Create a new application from a private remote repository
+$ oc new-app https://github.com/youruser/yourprivaterepo --source-secret=yoursecret
+
+ Create a new project
+$ oc new-project myproject
+
+Switch to a different project
+$ oc project test-project
+
+List all projects
+$ oc projects
+
+Show the status of the current project
+$ oc status
+
+Show the status of the current project
+$ oc status
+
+Import the latest image information
+$ oc import-image my-ruby
+
+ Create a build config from a local Git repository
+$ oc new-build .
+
+Create a build config from a remote Git reository
+$ oc new-build https://github.com/sclorg/cakephp-ex
+
+ Roll back to the last successful deployment
+$ oc rollback php
+
+Roll back to a specific version
+$ oc rollback php --to-version=3
+
+Roll back to a specific version
+$ oc rollback php --to-version=3
+
+Roll back to the last successful deployment
+$ oc rollout undo deploymentconfig/php
+
+ Start a new rollout for a deployment with its latest state
+$ oc rollout latest deploymentconfig/php
+
+Start a build from the specified build config
+$ oc start-build python
+
+Start a build from the specified build config
+$ oc start-build python
+
+Set an environment variable to use for the current build
+$ oc start-build python --env=mykey=myvalue
+
+Configure the ruby image’s latest tag to refer to the image for the 2.0 tag
+$ oc tag ruby:latest ruby:2.0
+
+ Add an annotation to a route
+$ oc annotate route/test-route haproxy.router.openshift.io/ip_whitelist="192.168.1.10"
+
+Remove the annotation from the route
+$ oc annotate route/test-route haproxy.router.openshift.io/ip_whitelist-
+
+Apply the configuration in pod.json to a pod
+$ oc apply -f pod.json
+
+Delete a pod named parksmap-katacoda-1-qfqz4
+$ oc delete pod/parksmap-katacoda-1-qfqz4
+
+Delete all pods with the app=parksmap-katacoda label
+$ oc delete pods -l app=parksmap-katacoda
+
+Describe a deployment named example
+$ oc describe deployment/example
+
+ Describe all pods
+$ oc describe pods
+
+ Edit a deployment using the default editor
+$ oc edit deploymentconfig/parksmap-katacoda
+
+Edit a deployment using a different editor
+$ OC_EDITOR="nano" oc edit deploymentconfig/parksmap-katacoda
+
+ Edit a deployment in JSON format
+$ oc edit deploymentconfig/parksmap-katacoda -o json
+
+ Expose a service
+$ oc expose service/parksmap-katacoda
+
+Expose a service and specify the host name
+$ oc expose service/parksmap-katacoda --hostname=www.my-host.com
+
+ List pods in the default namespace
+$ oc get pods -n default
+
+Get details about the python deployment in JSON format
+$ oc get deploymentconfig/python -o json
+
+ Update the python-1-mz2rf pod with the label status set to unhealthy
+$ oc label pod/python-1-mz2rf status=unhealthy
+
+ Scale the ruby-app deployment to three pods
+$ oc scale deploymentconfig/ruby-app --replicas=3
+
+Allow my-pull-secret to be used as an image pull secret by the default service account
+$ oc secrets link default my-pull-secret --for=pull
+
+ Get the token assigned to the default service account
+$ oc serviceaccounts get-token default
+
+ Get the token assigned to the default service account
+$ oc serviceaccounts get-token default
